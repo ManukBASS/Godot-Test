@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cris48mcsxcqo"]
+
+[ext_resource type="Script" path="res://Jugador.gd" id="1_m6vwt"]
+[ext_resource type="Texture2D" uid="uid://b245sauf54vg4" path="res://Assets/Knight.png" id="2_xq8vu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jl6dg"]
+
+[sub_resource type="Animation" id="Animation_msyr0"]
+resource_name = "Piola"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [-0.0872665, 0.0872665]
+}
+
+[sub_resource type="Animation" id="Animation_dj0us"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qq4dd"]
+_data = {
+"Piola": SubResource("Animation_msyr0"),
+"RESET": SubResource("Animation_dj0us")
+}
+
+[node name="Jugador" type="CharacterBody2D"]
+script = ExtResource("1_m6vwt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+rotation = -0.0872665
+scale = Vector2(0.0830078, 0.0830078)
+texture = ExtResource("2_xq8vu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jl6dg")
+
+[node name="Animaciones" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qq4dd")
+}

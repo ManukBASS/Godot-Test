@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhuw8owmdsvfv"]
+
+[ext_resource type="Texture2D" uid="uid://4yr7ld000wo8" path="res://Assets/Grass.png" id="1_t15kq"]
+[ext_resource type="PackedScene" uid="uid://28q3gufbie3i" path="res://arbol.tscn" id="2_ou25q"]
+[ext_resource type="PackedScene" uid="uid://cris48mcsxcqo" path="res://jugador.tscn" id="3_ce6m0"]
+
+[node name="Mundo" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Grass" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(159, 326)
+texture = ExtResource("1_t15kq")
+
+[node name="Grass2" type="Sprite2D" parent="Grass"]
+position = Vector2(320, -1)
+texture = ExtResource("1_t15kq")
+
+[node name="Grass3" type="Sprite2D" parent="Grass"]
+position = Vector2(639, 0)
+texture = ExtResource("1_t15kq")
+
+[node name="Grass4" type="Sprite2D" parent="Grass"]
+position = Vector2(0, -318)
+texture = ExtResource("1_t15kq")
+
+[node name="Grass5" type="Sprite2D" parent="Grass"]
+position = Vector2(320, -319)
+texture = ExtResource("1_t15kq")
+
+[node name="Grass6" type="Sprite2D" parent="Grass"]
+position = Vector2(636, -315)
+texture = ExtResource("1_t15kq")
+
+[node name="Arbol" parent="." instance=ExtResource("2_ou25q")]
+position = Vector2(200, 222)
+
+[node name="Arbol2" parent="." instance=ExtResource("2_ou25q")]
+position = Vector2(517, 328)
+
+[node name="Arbol3" parent="." instance=ExtResource("2_ou25q")]
+position = Vector2(123, 440)
+
+[node name="Arbol4" parent="." instance=ExtResource("2_ou25q")]
+position = Vector2(794, 130)
+
+[node name="Arbol5" parent="." instance=ExtResource("2_ou25q")]
+position = Vector2(764, 422)
+
+[node name="Arbol6" parent="." instance=ExtResource("2_ou25q")]
+position = Vector2(460, 117)
+
+[node name="Arbol7" parent="." instance=ExtResource("2_ou25q")]
+position = Vector2(54, 118)
+
+[node name="Jugador" parent="." instance=ExtResource("3_ce6m0")]
+position = Vector2(292, 309)
